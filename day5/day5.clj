@@ -14,3 +14,5 @@
     (for [step (range steps)] [(+ x1 (* step dx)) (+ y1 (* step dy))])))
 
 (->> input (map seg) (filter #(or (hor? %) (vert? %))) (mapcat segpts) frequencies (filter #(> (val %) 1)) count)
+
+(->> input (map seg) (mapcat segpts) frequencies (filter #(> (val %) 1)) count)
